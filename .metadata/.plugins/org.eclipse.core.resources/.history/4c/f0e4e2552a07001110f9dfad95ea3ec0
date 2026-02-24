@@ -1,0 +1,21 @@
+package repaso;
+
+public class Contraseña {
+	
+	public static void indice() {
+		System.out.println("Fortaleza de un password:");
+		System.out.println("-->DEBIL: si contiene menos de 8 caracteres");
+		System.out.println("-->MODERADA: si contiene,al menos, 8 caracteres");
+		System.out.println("-->FUERTE: si contiene como minimo  8 caracteres y cumple contres de las siguientes condiciones:");
+		System.out.println("\t\t-1 minuscula");
+		System.out.println("\t\t-1 mayuscula");
+		System.out.println("\t\t-1 numero del 0 al 9");
+		System.out.println("\t\t-1 carcater especial");
+		System.out.println("-->EXCELENTE: si contiene como minimo  8 caracteres y cumple con todas las condiciones anteriores ");
+	}
+	public static void main(String[] args) {
+	indice();
+
+	}
+
+}

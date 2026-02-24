@@ -1,0 +1,41 @@
+package string;
+
+import java.util.Scanner;
+
+public class EjemploString {
+
+	public static void main(String[] args) {
+		//1.pedimos al usuario que introduzca su nombre
+		Scanner sc=new Scanner(System.in);
+		System.out.print("dime tu nombre: ");
+		String nombre =sc.nextLine().trim().toLowerCase();
+		sc.close();
+		
+		//2.Mostrmos por pantalla 
+		System.out.println("Nombre: "+nombre);
+		
+		//3.Mostramos la longitud del nombre
+		System.out.println("Longitud: "+nombre.length());
+		
+		//4.Mostramos el nombre escrito con mayusculas
+		System.out.println("En mayusculas: "+nombre.toUpperCase());
+		System.out.println("Original: "+nombre);
+		
+		//5.Mostramos la inicial del nombre 
+		System.out.println("Inicial: "+nombre.charAt(0));
+		
+		//6.Mostramos el ultimo caracter del nombre
+		System.out.println("final: "+nombre.charAt(nombre.length()-1));
+		
+		//7.Mostramos el nombre intercalando espacios en blanco
+		System.out.print("Espaciado: ");
+		for(int i=0;i<nombre.length();i++)
+			System.out.print(nombre.charAt(i)+" ");
+		//8.Mostramos el nombre al reves
+				System.out.print("Nombre al reves: ");
+				for(int i=nombre.length();i>0;i--)
+					System.out.print(nombre.charAt(i)+" ");
+
+	}
+
+}

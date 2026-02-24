@@ -1,0 +1,41 @@
+package colecciones;
+
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+
+public class SetNumbers {
+
+	public static void main(String[] args) {
+		// creamos un conjunto de numeros enteros
+		Set<Integer> numberSet = new HashSet<Integer>();
+
+		// leemos por teclado numeros positivos hasta que el usuario introduzca el cero
+		// y los almacenamos en el conjunto
+		Scanner sc = new Scanner(System.in);
+		try {
+			System.out.print("Crea un conjunto de numeros: ");
+			int num=sc.nextInt();
+			 while (num!=0){
+				if(num<0) {
+					System.out.println(">"+num+" es un numero negativo");
+				}else if(numberSet.contains(num)) {
+					System.out.println(">"+num+" ya se encuentra en el conjunto");
+				}else
+					numberSet.add(num);
+				//leemos el siguiente numero
+				System.out.print("Otro numero ");
+				num=sc.nextInt();
+			} 
+
+		} catch (Exception e) {
+			System.out.println("Error");
+		} finally {
+			sc.close();
+		}
+		//mostramos los elemento
+		System.out.println("\n Tamaño del conjunto: "+numberSet.size());
+		System.out.println("Conjunto: " + numberSet.toString());
+	}
+
+}

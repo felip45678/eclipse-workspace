@@ -1,0 +1,47 @@
+package boletin;
+
+import java.util.Scanner;
+
+public class Ejercicio1 {
+
+	public static void main(String[] args) {
+		// creamos el scanner
+		Scanner sc = new Scanner(System.in);
+		try {
+			// creamos e inicializamos las variables
+			boolean capi = false;
+			String num = "";
+			int numero;
+			// hacemos un bucle que se repìta hasta que se introduzcan bien los datos
+			do {
+				System.out.print("dime un numero: ");
+				num = sc.nextLine();
+				numero = Integer.parseInt(num);
+			} while (numero <= 0);
+			// creamos un strinbuffer al cual le pondremos como parametro el string anterior
+			// y le aplicaremos el reverse al string buffer para compararlo
+			StringBuffer igual = new StringBuffer(num);
+			igual.reverse();
+			if (numero < 10) {
+
+				System.out.println("debe tener al mneos dos digitos");
+				capi = false;
+			}
+
+			if (num.contentEquals(igual)) {
+				capi = true;
+			}
+			if (capi == true && numero > 10) {
+				System.out.println("el numero " + num + " es capicua");
+			} else {
+				System.out.println("el numero " + num + " no es capicua");
+			}
+
+		} catch (Exception e) {
+			System.out.println("ERROR en la introduccion de datos");
+			System.out.println("El programa finalizara");
+		}
+		sc.close();
+	}
+
+}

@@ -1,0 +1,88 @@
+package repaso;
+
+import java.util.Scanner;
+
+public class Names {
+
+	final static int TOTAL = 5;
+	/**
+	 * funcion que muestra los valores en el array 
+	 * @param vector
+	 */
+	private static void mostrar(String[]vector) {
+		for(int i=0;i<vector.length;i++) {
+			System.out.print(vector[i]+" ");
+		}
+	}
+	/**
+	 * funcion que ordena los valores del array
+	 * @param vector
+	 */
+	private static void ordenar(String[]vector) {
+		String aux;
+		for(int i=vector.length;i>0;i--) {
+			for(int j=0;j<vector.length-1;j++) {
+				if(vector[j].compareTo(vector[j+1])>0) {
+					aux=vector[j+1];
+					vector[j+1]=vector[j];
+					vector[j]=aux;
+				}
+			}
+		}
+	}
+	/**
+	 * funcion que muestra el indice del string as largo almecenado en el arraya de strings
+	 * @param vector
+	 * @return
+	 */
+	private static int mayor(String[]vector) {
+		int mayor=0;
+		for(int j=1;j<vector.length-1;j++) {
+			if(vector[j].length()>vector[mayor].length())
+				mayor=j;
+		}
+		return mayor;
+	}
+	/**
+	 * funcion que muestra el indice del string as largo almecenado en el arraya de strings
+	 * @param vector
+	 * @return
+	 */
+	private static int menor(String[]vector) {
+		int mayor=0;
+		for(int j=1;j<vector.length-1;j++) {
+			if(vector[j].length()<vector[mayor].length())
+				mayor=j;
+		}
+		return mayor;
+	}
+	private static String random(String[]nombre) {
+		String resultado="";
+		for(int i=0;i<nombre.length;i++) {
+			resultado=nombre[(int) (Math.random()*nombre.length)];
+		}
+		
+		return resultado;
+		
+	}
+	public static void main(String[] args) {
+		// creamos el vector
+		String[] vector = new String[TOTAL];
+		Scanner sc = new Scanner(System.in);
+		for (int i = 0; i < vector.length; i++) {
+			System.out.print("["+i+"] Introduce los nombres: ");
+			vector[i] = sc.nextLine();
+		}
+		sc.close();
+		System.out.println("\nListado de nombres: ");
+		mostrar(vector);
+		System.out.print("\nArray ordenado: ");
+		ordenar(vector);
+		mostrar(vector);
+		System.out.println("\nla posiscion mayor es: "+vector[mayor(vector)]);
+		System.out.println("\nla posiscion menor es: "+vector[menor(vector)]);
+		System.out.println("\nal azar: "+random(vector));
+		
+	}
+
+}

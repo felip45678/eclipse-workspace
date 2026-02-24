@@ -1,0 +1,22 @@
+package string;
+
+public class Stringtest {
+
+	public static void main(String[] args) {
+		// trim();
+		String nombre;
+		nombre="   Harry potter   ";
+		System.out.println(nombre.trim());
+		System.out.println(nombre);
+		nombre=nombre.trim();
+
+		//replace();
+		System.out.println(nombre.replace('e', 'X'));
+		System.out.println(nombre.replace('t', 'T'));
+		System.out.println(nombre.replace('r', 'R'));
+		
+		//subString
+		System.out.println(nombre.substring(0, 5)));
+	}
+
+}

@@ -1,0 +1,26 @@
+package boletin;
+
+import java.util.Scanner;
+
+public class Ejercicio3 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Introduce una frase: ");
+		String palabra = sc.nextLine();
+		char espacio=' ';
+		int j=0;
+		for (int i = 0; i < palabra.length(); i++) {
+			if(palabra.charAt(j)==espacio) {
+				System.out.println(palabra.substring(0, espacio));
+				
+			}else {
+				j++;
+			}
+		}
+		
+		sc.close();
+
+	}
+
+}

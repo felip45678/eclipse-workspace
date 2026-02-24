@@ -1,0 +1,27 @@
+package wrappers;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Nombreyedad4 {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner (System.in);
+		try {
+			int edad;
+			String nombre;
+			System.out.print("introduce tu edad: ");
+			edad=sc.nextInt();
+			nombre=sc.nextLine();
+			System.out.print("ntroduce tu nombre: ");
+			nombre=sc.nextLine();
+			
+			System.out.println("te llamas "+nombre+" y tu edad es "+edad+" años.");
+		}catch(InputMismatchException ime) {
+			System.out.println("error");
+		}finally {
+			sc.close();
+		}
+	}
+
+}

@@ -1,0 +1,46 @@
+package repaso;
+
+import java.util.Scanner;
+
+public class Names {
+
+	final static int TOTAL = 5;
+	/**
+	 * funcion que muestra los valores en el array 
+	 * @param vector
+	 */
+	private static void mostrar(String[]vector) {
+		for(int i=0;i<vector.length;i++) {
+			System.out.print(vector[i]+" ");
+		}
+	}
+	/**
+	 * funcion que ordena los valores del array
+	 * @param vector
+	 */
+	private static void ordenar(String[]vector) {
+		String aux;
+		for(int i=vector.length;i>0;i--) {
+			for(int j=0;j<vector.length-1;j++) {
+				if(vector[j].compareTo(vector[j+1])!=0) {
+					aux=vector[j+1];
+					vector[j+1]=vector[j];
+					vector[j]=aux;
+				}
+			}
+		}
+	}
+	public static void main(String[] args) {
+		// creamos el vector
+		String[] vector = new String[TOTAL];
+		Scanner sc = new Scanner(System.in);
+		for (int i = 0; i < vector.length; i++) {
+			System.out.print("["+i+"] Introduce los nombres: ");
+			vector[i] = sc.nextLine();
+		}
+		sc.close();
+		System.out.println("\nListado de nombres: ");
+		mostrar(vector);
+	}
+
+}

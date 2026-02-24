@@ -1,0 +1,35 @@
+package repaso.cifrado;
+
+public class AbecedarioCifrado {
+
+	public static void main(String[] args) {
+		// abcedario en mayusculas
+		for(int i='A';i<='Z';i++) 
+			System.out.print((char)i);
+		
+		System.out.println();
+		
+		int caracter;
+		for(int i='A';i<='Z';i++) {
+			caracter=i+3;
+			if((char)caracter>'Z')
+				caracter-=26;
+			System.out.print((char)caracter);
+		}
+		//abecedario en minusculas
+		for(int i='a';i<='z';i++) 
+			System.out.print((char)i);
+		
+		System.out.println();
+		
+		
+		for(int i='a';i<='z';i++) {
+			caracter=i+3;
+			if((char)caracter>'z')
+				caracter-=26;
+			System.out.print((char)caracter);
+		}
+
+	}
+
+}

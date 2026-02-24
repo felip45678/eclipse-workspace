@@ -1,0 +1,36 @@
+package boletin;
+
+import java.util.Scanner;
+
+public class Ejercicio3 {
+
+	/**
+	 * funcion que devuelve la posicion del primer espacio en blanco que contiene un
+	 * String pasao como parametro
+	 * 
+	 * @param bb
+	 * @return
+	 */
+	public static int espacioEnBlanco(String bb) {
+		for (int i = 0; i < bb.length(); i++) {
+			if (bb.charAt(i) == ' ') {
+				return i;
+			}
+		}
+		return -1;
+	}
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Introduce una frase: ");
+		String palabra = sc.nextLine();
+		int pos = espacioEnBlanco(palabra);
+		for (int i = 0; i < palabra.length(); i++) {
+			System.out.println(palabra.substring(i,pos));
+		}
+		
+		sc.close();
+
+	}
+
+}

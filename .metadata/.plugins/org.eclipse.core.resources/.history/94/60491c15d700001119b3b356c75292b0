@@ -1,0 +1,15 @@
+package string;
+
+public class Stringtest {
+
+	public static void main(String[] args) {
+		// trim();
+		String nombre;
+		nombre="   Harry pottter   ";
+		System.out.println(nombre.trim());
+		System.out.println(nombre);
+
+		
+	}
+
+}

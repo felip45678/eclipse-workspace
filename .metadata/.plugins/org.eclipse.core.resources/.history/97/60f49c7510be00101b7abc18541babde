@@ -1,0 +1,29 @@
+package ejemplos.ejercicios;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Ejercicio23 {
+	
+	
+	public static void main(String[] args) {
+		//Programa que lea una serie de números enteros y obtenga su media. Un número negativo indicará el fin de datos.
+
+		Scanner sc=new Scanner(System.in);
+		try {
+			int num,media,conta ;
+			do {
+				System.out.print("dime un numero: ");
+				num=sc.nextInt();
+				
+			}while (num>0);
+			System.out.println("la media es: ");
+			
+		}catch (InputMismatchException ime) {
+			System.err.println("error");
+		}
+		
+		sc.close();
+	}
+
+}

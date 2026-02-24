@@ -1,0 +1,23 @@
+package boletin;
+
+import java.util.Scanner;
+
+public class Ejercicio3 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Introduce una frase: ");
+		String palabra = sc.nextLine();
+		char espacio=' ';
+		int j=0;
+		StringBuffer igual=new StringBuffer(palabra);
+		do {
+		igual.indexOf(palabra, espacio);
+		System.out.println("palabra "+igual);
+		}while(igual.charAt(igual.length()-1)=='.');
+		
+		sc.close();
+
+	}
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;date.Edadv2&apos; to &apos;mayordeedad&apos;&#x0D;&#x0A;- Original project: &apos;unidadDeTrabajo5&apos;&#x0D;&#x0A;- Original element: &apos;date.Edadv2&apos;&#x0D;&#x0A;- Renamed element: &apos;date.mayordeedad&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Edadv2&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;date{Edadv2.java[Edadv2" matchStrategy="1" name="mayordeedad" qualified="false" references="true" similarDeclarations="false" stamp="1767772619854" textual="false" version="1.0"/>
+</session>

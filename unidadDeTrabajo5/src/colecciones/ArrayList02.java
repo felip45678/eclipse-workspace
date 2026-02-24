@@ -1,0 +1,39 @@
+package colecciones;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class ArrayList02 {
+
+	public static void main(String[] args) {
+		// creamos una lista de numeros enteros
+		ArrayList<Integer> lista = new ArrayList<Integer>();
+		// leemos por teclado numeros enteros hasta que el usuario introduzca el cero
+		// y los almecenamos en la lista
+		Scanner sc = new Scanner(System.in);
+		try {
+			int num;
+
+			System.out.print("dime un numero: ");
+			num = sc.nextInt();
+			while (num != 0) {
+				lista.add(num);
+				System.out.print("dime un numero: ");
+				num = sc.nextInt();
+			}
+		} catch (Exception e) {
+			System.out.println("ERROR");
+		} finally {
+			sc.close();
+		}
+		System.out.println("Lista: " + lista.toString());
+		//mostramos el tamaño de la lista y los elementos almacendos
+		System.out.println("\n>Numero de valores introducidos: "+lista.size());
+		System.out.println("\nLista de numeros "+lista);
+		lista.sort(null);
+		System.out.println("\nLista de numeros ordenada "+lista);
+
+		
+	}
+
+}

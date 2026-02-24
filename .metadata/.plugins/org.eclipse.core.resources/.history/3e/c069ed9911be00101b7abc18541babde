@@ -1,0 +1,19 @@
+package ejemplos.ejercicios;
+
+public class Ejercicio17 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int linea,blanco,asterisco;
+		for(linea=1;linea<=4;linea++) {
+			for(blanco=4;blanco>=linea;blanco--) {
+				System.out.print("");
+			}
+			for(asterisco=1;asterisco<=4;asterisco++) {
+				System.out.print("*");
+			}
+		System.out.println();
+		}
+	}
+
+}

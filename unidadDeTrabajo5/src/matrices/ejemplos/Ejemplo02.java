@@ -1,0 +1,28 @@
+package matrices.ejemplos;
+
+public class Ejemplo02 {
+
+	/**
+	 * procedimiento que myuestra por pantalla los valores almacenados en una matriz
+	 * @param M
+	 */
+	public static void mostrarMatriz(int M[][]) {
+		for(int i=0;i<M.length;i++) {
+			for(int j=0;j<M[i].length;j++)
+				System.out.print(M[i][j]+"\t");
+			System.out.println();
+		}
+
+	}
+	public static void main(String[] args) {
+		int[][] matriz1= {{1,2,3,4,5},{6,7,8,9,10},{11,12,13,14,15}};
+		int[][] matriz2={{1,2,3,4},{16,17,18,19},{11,12,13,14}};
+		//mostramos por pantalla los valores almacenados por la matriz
+		System.out.println("Matriz 1: ");
+		mostrarMatriz(matriz1);
+		System.out.println("\nMatriz 2: ");
+		mostrarMatriz(matriz2);
+
+	}
+
+}

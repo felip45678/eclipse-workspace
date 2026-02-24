@@ -1,0 +1,25 @@
+package colecciones;
+
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+
+public class SetNumbers {
+
+	public static void main(String[] args) {
+		//creamos un conjunto de numeros enteros 
+		Set<Integer> numberSet=new HashSet<Integer>();
+		
+		//leemos por teclado numeros hasta que el usuario introduzca el cero 
+		//y los almacenamos en el conjunto
+		Scanner sc=new Scanner(System.in);
+		System.out.print("introduce numeros: ");
+		do {
+			numberSet.add(sc.nextInt());
+		}while (!numberSet.contains(0));
+
+		sc.close();
+		System.out.println("Conjunto: "+numberSet.toString());
+	}
+
+}

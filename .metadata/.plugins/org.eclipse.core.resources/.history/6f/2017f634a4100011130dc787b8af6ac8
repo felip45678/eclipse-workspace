@@ -1,0 +1,39 @@
+package boletin;
+
+import java.util.Scanner;
+
+public class Ejercicio1 {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner (System.in);
+		try {
+			boolean capi=false;
+			String num="";
+			int numero;
+			do {
+			System.out.print("dime un numero: ");
+			num=sc.nextLine();
+			numero=Integer.parseInt(num);
+			}while( numero<10);
+			StringBuffer igual=new StringBuffer(num);
+			igual.reverse();
+			System.out.println(num);
+			System.out.println(igual);
+			
+			if(num.contentEquals(igual)) {
+				capi=true;
+			}
+			if(capi==true) {
+				System.out.println("el numero "+num+" es capicua");
+			}else {
+				System.out.println("el numero "+num+" no es capicua");
+			}
+			
+		}catch(Exception e) {
+			System.out.println("ERROR en la introduccion de datos");
+			System.out.println("El programa finalizara");
+		}
+		sc.close();
+	}
+
+}

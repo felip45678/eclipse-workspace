@@ -1,0 +1,26 @@
+package boletin;
+
+import java.util.Scanner;
+
+public class Ejercicio2 {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		boolean fin=false;
+		String palabra="";
+		String uni="";
+	
+		System.out.println("Introduce palabras ('FIN' para terminar)...");
+		while(fin==false) {
+				System.out.print("palabra :");
+				palabra=sc.nextLine();
+				if(palabra.startsWith("FIN"))
+					fin=true;
+				uni+=palabra+" ";
+		}
+		System.out.println("> Frase: "+uni.replaceFirst("FIN",""));
+		sc.close();
+
+	}
+
+}

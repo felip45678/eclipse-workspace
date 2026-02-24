@@ -1,0 +1,20 @@
+package boletin;
+
+import java.util.Scanner;
+
+public class Ejercicio1 {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner (System.in);
+		try {
+			int num;
+			System.out.print("dime un numero: ");
+			num=sc.nextInt();
+		}catch(Exception e) {
+			System.out.println("ERROR en la ind¡troduccion de datos");
+			System.out.println("El programa finalizara");
+		}
+		sc.close();
+	}
+
+}
