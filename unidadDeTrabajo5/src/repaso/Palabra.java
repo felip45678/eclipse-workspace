@@ -11,7 +11,7 @@ public class Palabra {
 		palabra=sc.nextLine();
 		for(int i=0;i<palabra.split(" ").length;i++) {
 			if(palabra.split(" ")[i]!="")
-				System.out.println("palabra "+palabra.split(" ")[i]);
+				System.out.println("palabra: "+palabra.split(" ")[i]);
 		}
 		sc.close();
 

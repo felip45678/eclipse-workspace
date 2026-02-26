@@ -1,6 +1,7 @@
 package colecciones;
 
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -30,7 +31,22 @@ public class SetNumbers {
 			 //mostramos los elementos
 			 System.out.println("\n Tamaño del conjunto: "+numberSet.size());
 			 System.out.println("Conjunto: " + numberSet.toString());
-
+			 Iterator<Integer>conjiterator=numberSet.iterator();
+			 //recorremos el conjunto elemento a elemento
+			 System.out.println("Conjunto: " );
+			 while(conjiterator.hasNext()) {
+				 System.out.print(conjiterator.next()+" ");
+			 }
+			 //recorrer el conjunto elemento a elemento para visualizar los pares
+			 Iterator<Integer>j=numberSet.iterator();
+			 System.out.println("\nPares: ");
+			 int valor;
+			 while(j.hasNext()) {
+				 valor=j.next();
+				 if(valor%2==0) {
+					 System.out.println(valor+" ");
+				 }
+			 }
 		} catch (Exception e) {
 			System.out.println("Error");
 		} finally {

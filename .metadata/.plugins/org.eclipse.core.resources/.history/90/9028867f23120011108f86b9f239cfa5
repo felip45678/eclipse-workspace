@@ -1,0 +1,55 @@
+package colecciones;
+
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Scanner;
+import java.util.Set;
+
+public class SetNumbers {
+
+	public static void main(String[] args) {
+		// creamos un conjunto de numeros enteros
+		Set<Integer> numberSet = new HashSet<Integer>();
+
+		// leemos por teclado numeros positivos hasta que el usuario introduzca el cero
+		// y los almacenamos en el conjunto
+		Scanner sc = new Scanner(System.in);
+		try {
+			System.out.print("Crea un conjunto de numeros: ");
+			int num=sc.nextInt();
+			 while (num!=0){
+				if(num<0) {
+					System.out.println(">"+num+" es un numero negativo");
+				}else if(numberSet.contains(num)) {
+					System.out.println(">"+num+" ya se encuentra en el conjunto");
+				}else
+					numberSet.add(num);
+				//leemos el siguiente numero
+				System.out.print("Otro numero ");
+				num=sc.nextInt();
+			} 
+			 //mostramos los elementos
+			 System.out.println("\n Tamaño del conjunto: "+numberSet.size());
+			 System.out.println("Conjunto: " + numberSet.toString());
+			 Iterator<Integer>conjiterator=numberSet.iterator();
+			 //recorremos el conjunto elemento a elemento
+			 System.out.println("Conjunto: " );
+			 while(conjiterator.hasNext()) {
+				 System.out.print(conjiterator.next()+" ");
+			 }
+			 //recorrer el conjunto elemento a elemento para visualizar los pares
+			 Iterator<Integer>j=numberSet.iterator();
+			 System.out.println("\nPares: ");
+			 while(j.hasNext()) {
+				 if(j.next()%2==0) {
+					 System.out.println(j);
+				 }
+			 }
+		} catch (Exception e) {
+			System.out.println("Error");
+		} finally {
+			sc.close();
+		}
+	}
+
+}
