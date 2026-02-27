@@ -1,0 +1,67 @@
+package colecciones;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+
+public class Map03 {
+
+	public static void main(String[] args) {
+		//Declaramos el map
+		//Clave--> nombre del alumno (String)
+		//Valor --> nota final(Double)
+		Map<String,Double> notas=new HashMap<String,Double>();
+		
+		//añadimos alumnos y notas
+		notas.put("Miguel", 7.25);
+		notas.put("Ana", 8.75);
+		notas.put("Lola", 7.5);
+		notas.put("Alberto",9.1);
+		notas.put("Carlos", 5.8);
+		
+		//mostramos todas las notas
+		System.out.println("===LISTADO DE NOTAS ===");
+		//a) obtenemos el conjunto de entradas(Clave-valor)
+		Set<Map.Entry<String,Double>>conjunto=notas.entrySet();
+		
+		//creamos el iterator 
+		Iterator<Map.Entry<String,Double>> i=conjunto.iterator();
+		
+		//recorremos con el while 
+		while(i.hasNext()) {
+			Map.Entry<String,Double>entrada=i.next();
+			System.out.println("Alumno: "+entrada.getKey()+" | Nota: "+entrada.getValue());
+		}
+		//2)calculamos la nota media 
+		double suma=0;
+		Iterator<Double>j=notas.values().iterator();
+		while(j.hasNext()) {
+			suma+=j.next();
+		}
+		System.out.println("\nNota media del grupo: "+suma/notas.size());
+		
+		//3)buscamos al lumno con mayor nota 
+		//obtenemos el iterator sobrfe las entradas del Map
+		Iterator<Map.Entry<String, Double>>k=notas.entrySet().iterator();
+		Map.Entry<String, Double>primeralumno=k.next();
+		double mejornota=primeralumno.getValue();
+		String mejoralumno=primeralumno.getKey();
+		//b) recorremos con while 
+		while(k.hasNext()) {
+			Map.Entry<String, Double>siguientealumno=k.next();
+			if(siguientealumno.getValue()>mejornota) {
+				mejornota=siguientealumno.getValue();
+				mejoralumno=siguientealumno.getKey();
+			}
+		}
+		System.out.println("\n alumno comn la mayor nota: "+mejoralumno+" con un "+mejornota);
+		
+		//4)modificamos la nota de lola y la subimos un punto
+		String nombre="Ana";
+		System.out.println("\nActualizmos la nota de "+nombre);
+		notas.put(nombre, notas.get(nombre)+1);
+		System.out.println("Nuevanota de "+nombre+": "+notas.get(nombre));
+	}
+
+}

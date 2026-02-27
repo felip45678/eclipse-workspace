@@ -1,0 +1,39 @@
+package colecciones;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+
+public class Map03 {
+
+	public static void main(String[] args) {
+		//Declaramos el map
+		//Clave--> nombre del alumno (String)
+		//Valor --> nota final(Double)
+		Map<String,Double> notas=new HashMap<String,Double>();
+		
+		//añadimos alumnos y notas
+		notas.put("Miguel", 7.25);
+		notas.put("Ana", 8.75);
+		notas.put("Lola", 7.5);
+		notas.put("Alberto",9.1);
+		notas.put("Carlos", 5.8);
+		
+		//mostramos todas las notas
+		System.out.println("===LISTADO DE NOTAS ===");
+		//a) obtenemos el conjunto de entradas(Clave-valor)
+		Set<Map.Entry<String,Double>>conjunto=notas.entrySet();
+		
+		//creamos el iterator 
+		Iterator<Map.Entry<String,Double>> i=conjunto.iterator();
+		
+		//recorremos con el while 
+		while(i.hasNext()) {
+			Map.Entry<String,Double>entrada=i.next();
+			System.out.println("Alumno: "+entrada.getKey()+" | Nota: "+entrada.getValue());
+		}
+
+	}
+
+}
