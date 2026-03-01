@@ -1,0 +1,32 @@
+package colecciones;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class Clasific {
+
+	public static void main(String[] args) {
+		//Queremos clasificar las palabras que introduce un usuario según su longitud. 
+		//Por ejemplo, si introduce "Java" y "Hola", ambas van a la categoría de "4 letras".
+		Map<Integer,ArrayList<String>>clasificador=new HashMap<>();
+		Scanner sc=new Scanner(System.in);
+		String palabra="";
+		int longitud=0;
+		while(!palabra.startsWith("SALIR")) {
+		System.out.print("Introduce palabras hasta que escribas SALIR: ");
+		palabra=sc.nextLine().trim();
+		longitud=palabra.length();
+		if(!clasificador.containsKey(longitud)) {
+			clasificador.put(longitud,new ArrayList<String>());
+		}
+		clasificador.put(longitud, palabra);
+		
+		}
+		System.out.println();
+		sc.close();
+
+	}
+
+}

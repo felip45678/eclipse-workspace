@@ -1,0 +1,39 @@
+package colecciones;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Set;
+
+import java.util.Iterator;
+
+public class MapNombreapell {
+
+	public static void main(String[] args) {
+		// creamos el map para guaradar los nombres y apellidos
+		Map<String, String> nombre = new HashMap<String, String>();
+		String nom = "";
+		String nombrecompleto = "";
+		String ape = "";
+		String ini="";
+		Scanner sc = new Scanner(System.in);
+		for (int i = 1; i <= 3; i++) {
+			System.out.print("dime tu nombre: ");
+			nom = sc.nextLine();
+			System.out.print("dime tu apellido: ");
+			ape = sc.nextLine();
+			nombrecompleto = nom + " " + ape;
+			ini=nom.charAt(0)+"."+ape.charAt(0);
+			nombre.put(nombrecompleto, ini.toUpperCase());
+		}
+		sc.close();
+		Set<Map.Entry<String,String>>conjunto=nombre.entrySet();
+		Iterator<Map.Entry<String,String>>i=conjunto.iterator();
+		while(i.hasNext()) {
+			Map.Entry<String, String>entrada=i.next();
+			System.out.println("nombre completo: "+entrada.getKey()+" iniciales: "+entrada.getValue());
+		}
+
+	}
+
+}

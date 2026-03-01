@@ -1,0 +1,32 @@
+package repaso.cifrado;
+
+import java.util.Scanner;
+
+public class Rr {
+
+	public static String cigfrarCesar(String texto,int clave) {
+		String palabra="";
+		int caracter;
+		for(int i=0;i<texto.length();i++) {
+			if(texto.charAt(i)>='a' && texto.charAt(i)<='z') {
+				caracter=texto.charAt(i)+clave;
+				if((char)(caracter)>'z')
+					caracter-=26;
+				palabra+=(char)caracter;
+			}
+		}
+		return palabra;
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Dime la frase que quieras cifrar: ");
+		String frase=sc.nextLine();
+		System.out.print("Que clave quiere usar: ");
+		int clave=sc.nextInt();
+		System.out.println("La frase cifrada es "+cigfrarCesar(frase,clave));
+		sc.close();
+
+	}
+
+}

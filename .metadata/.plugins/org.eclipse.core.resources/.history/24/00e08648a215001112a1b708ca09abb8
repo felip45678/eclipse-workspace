@@ -1,0 +1,45 @@
+package colecciones;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Scanner;
+
+public class Garantias {
+
+	public static void main(String[] args) {
+		//creamos el scanner 
+		Scanner sc=new Scanner(System.in);
+		boolean expiro=false;
+		System.out.println("Dime la fecha que compraste tu producto: ");
+		System.out.print("Dia: ");
+		int diu=sc.nextInt();
+		System.out.print("Mes: ");
+		int meu=sc.nextInt();
+		System.out.print("Año: ");
+		int añu=sc.nextInt();
+		sc.close();
+		// creamos la fecha actual
+		Date hoy=new Date();
+		SimpleDateFormat formato=new SimpleDateFormat();
+		formato=new SimpleDateFormat("yyyy");
+		String año=formato.format(hoy);
+		formato=new SimpleDateFormat("MM");
+		String mes=formato.format(hoy);
+		formato=new SimpleDateFormat("dd");
+		String dia=formato.format(hoy);
+	System.out.println(dia+"/"+mes+"/"+año);
+	int ahoy=Integer.parseInt(año);
+	int mhoy=Integer.parseInt(mes);
+	int dhoy=Integer.parseInt(dia);
+	if((añu+2)>ahoy) {
+		expiro=true;
+	}
+	if(expiro) {
+		System.out.println("Resultado: Garantía expirada desde hace "+(ahoy-añu));
+	}else
+		System.out.println("garantia valida");
+	
+	
+	}
+
+}
